@@ -1,4 +1,4 @@
-import { component$, Slot } from "@builder.io/qwik";
+import { component$, Slot, useTask$, useVisibleTask$ } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
@@ -13,5 +13,19 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 };
 
 export default component$(() => {
+  useTask$(() => {
+    console.log("1. This will run when the component is mounted");
+  });
+
+  useVisibleTask$(() => {
+    console.log(
+      "2. This will run when the component is visible in the viewport"
+    );
+  });
+
+  useTask$(() => {
+    console.log("3. This will run when the component is mounted");
+  });
+
   return <Slot />;
 });

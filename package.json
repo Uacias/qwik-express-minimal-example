@@ -47,5 +47,10 @@
     "undici": "*",
     "vite": "^5.2.10",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "dependencies": {
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
+    "@web3modal/wagmi": "^4.2.2",
+    "http2-express-bridge": "^1.0.7"
   }
 }
